@@ -1,3 +1,4 @@
+
 import os
 from flask import Flask, request
 import openai
@@ -22,6 +23,7 @@ def webhook():
         messages=[{"role": "user", "content": user_msg}],
         api_key=GPT_KEY
     )
+
     reply = res["choices"][0]["message"]["content"]
 
     headers = {"Authorization": f"Bearer {LINE_TOKEN}"}
@@ -31,8 +33,5 @@ def webhook():
     }
 
     requests.post("https://api.line.me/v2/bot/message/reply", headers=headers, json=payload)
+
     return "OK"
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
-
