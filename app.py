@@ -1,10 +1,9 @@
-
+import os
 from flask import Flask, request
 import openai
 import requests
 
 app = Flask(__name__)
-import os  #
 
 LINE_TOKEN = os.environ["LINE_TOKEN"]
 GPT_KEY = os.environ["GPT_KEY"]
