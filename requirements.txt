@@ -1,6 +1,3 @@
-
-flask
-requests
-openai
+Flask
 gunicorn
-echo gunicorn >> requirements.txt
+requests
