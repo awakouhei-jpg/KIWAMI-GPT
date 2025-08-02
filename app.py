@@ -30,3 +30,5 @@ def webhook():
     requests.post("https://api.line.me/v2/bot/message/reply", headers=headers, json=payload)
 
     return "OK"
+if __name__ == "__main__":
+    app.run()
