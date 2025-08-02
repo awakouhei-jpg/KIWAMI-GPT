@@ -4,8 +4,11 @@ import openai
 import requests
 
 app = Flask(__name__)
-LINE_TOKEN = 'ここにLINEチャネルアクセストークン'
-GPT_KEY = 'ここにOpenAI APIキー'
+import os  #
+
+LINE_TOKEN = os.environ["LINE_TOKEN"]
+GPT_KEY = os.environ["GPT_KEY"]
+
 
 @app.route("/webhook", methods=["POST"])
 def webhook():
